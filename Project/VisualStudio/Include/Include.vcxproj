@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Uefi|ARM">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|ARM64">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|Win32">
+      <Configuration>Uefi</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|x64">
+      <Configuration>Uefi</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Include\Cpu\Cpu.h" />
+    <ClInclude Include="..\..\..\Include\Gui\Client.h" />
+    <ClInclude Include="..\..\..\Include\GUI\Geometry.h" />
+    <ClInclude Include="..\..\..\Include\GUI\Graphics.h" />
+    <ClInclude Include="..\..\..\Include\GUI\Input.h" />
+    <ClInclude Include="..\..\..\Include\GUI\List.h" />
+    <ClInclude Include="..\..\..\Include\GUI\Object.h" />
+    <ClInclude Include="..\..\..\Include\GUI\ObjectList.h" />
+    <ClInclude Include="..\..\..\Include\GUI\Screen.h" />
+    <ClInclude Include="..\..\..\Include\GUI\Task.h" />
+    <ClInclude Include="..\..\..\Include\GUI\Version.h" />
+    <ClInclude Include="..\..\..\Include\GUI\Volume.h" />
+    <ClInclude Include="..\..\..\Include\Serialize\Base64.h" />
+    <ClInclude Include="..\..\..\Include\Serialize\Parser.h" />
+    <ClInclude Include="..\..\..\Include\Serialize\Plist.h" />
+    <ClInclude Include="..\..\..\Include\Serialize\Svg.h" />
+    <ClInclude Include="..\..\..\Include\Serialize\Xml.h" />
+    <ClInclude Include="..\..\..\Include\Uefi.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Base.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Boot.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Defaults.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Intrinsics.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Language.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Lock.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Print.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AbsolutePointer.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AcpiTable.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AdapterInformation.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Arp.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AtaPassThru.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AuthenticationInfo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Bis.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BlockIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BlockIo2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BlockIoCrypto.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothAttribute.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothConfig.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothHostController.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothLeConfig.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BusSpecificDriverOverride.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ComponentName.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ComponentName2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Configuration.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Debugport.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DebugSupport.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Decompress.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DevicePath.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DevicePathFromText.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DevicePathToText.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DevicePathUtilities.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Dhcp4.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Dhcp6.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DiskIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DiskIo2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Dns4.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Dns6.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverBinding.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverDiagnostics.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverDiagnostics2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverFamilyOverride.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverHealth.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverSupportedEfiVersion.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Eap.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EapConfiguration.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EapManagement.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EapManagement2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ebc.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EdidActive.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EdidDiscovered.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EdidOverride.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Encoding.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EraseBlock.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ExtScsiPassThru.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\File.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\FirmwareManagement.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\FormBrowser2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ftp4.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\GraphicsOutput.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Hash.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Hash2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiConfigAccess.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiConfigKeyword.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiConfigRouting.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiDatabase.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiFont.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiFontEx.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiFontGlyphGenerator.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiImage.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiImageDecoder.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiImageEx.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiPopup.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiString.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Http.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HttpBootCallback.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HttpUtilities.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip4.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip4Config.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip4Config2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip6.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip6Config.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\IpSec.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\IpSec2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\IpSecConfig.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Kms.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\LoadedImage.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\LoadFile.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\LoadFile2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Locale.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Log.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ManagedNetwork.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\MpService.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Mtftp4.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Mtftp6.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\NvdimmLabel.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\NvmExpressPassThru.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PciIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PciRootBridgeIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Pkcs7Verify.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PlatformDriverOverride.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PlatformToDriverConfig.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PxeBaseCode.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PxeBaseCodeCallback.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\RamDisk.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\RegularExpression.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ResetNotification.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Rest.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Rng.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ScsiIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SdMmcPassThru.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SerialIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ServiceBinding.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleFileSystem.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleNetwork.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimplePointer.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleTextInput.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleTextInputEx.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleTextOutput.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SmartCardEdge.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SmartCardReader.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\StorageSecurityCommand.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Supplicant.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\TapeIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Tcp4.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Tcp6.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Timestamp.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Tls.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\TlsConfig.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Translation.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Udp4.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Udp6.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UfsDeviceConfig.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UgaDraw.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UnicodeCollation.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Usb2HostController.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UsbFunctionIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UsbHostController.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UsbIo.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UserCredential.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UserCredential2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UserManager.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\VlanConfig.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\WiFi.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\WiFi2.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Queue.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Runtime.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Status.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\String.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\System.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8FE7E89B-A519-409E-B824-385033C748ED}</ProjectGuid>
+    <Keyword>Include</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\Build\Customizations\Build.props" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)\Build\$(Configuration)_$(Platform)\</OutDir>
+    <IntDir>$(OutDir)\$(ProjectName)\</IntDir>
+    <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
+    <IncludePath>$(SolutionDir)\Include;$(OutDir)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(LibraryPath)</LibraryPath>
+    <NMakeBuildCommandLine>echo "" &gt;NUL 2&gt;NUL</NMakeBuildCommandLine>
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakeIncludeCommandLine>
+    </NMakeIncludeCommandLine>
+    <NMakeCleanCommandLine>echo "" &gt;NUL 2&gt;NUL</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>echo "" &gt;NUL 2&gt;NUL</NMakeReBuildCommandLine>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <BuildLog>
+      <Path>$(IntDir)\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

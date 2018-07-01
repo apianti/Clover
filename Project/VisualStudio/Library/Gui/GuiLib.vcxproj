@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Uefi|ARM">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|ARM64">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|Win32">
+      <Configuration>Uefi</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|x64">
+      <Configuration>Uefi</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E94DE137-645E-4694-9B0C-D7F583E09EE6}</ProjectGuid>
+    <RootNamespace>GuiLib</RootNamespace>
+    <ProjectName>GuiLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="..\..\Build\Customizations\Platform.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\Build\Customizations\Build.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Library\Gui\Client.c" />
+    <ClCompile Include="..\..\..\..\Library\Gui\Graphics.c" />
+    <ClCompile Include="..\..\..\..\Library\Gui\Loaders.c" />
+    <ClCompile Include="..\..\..\..\Library\Gui\Input.c" />
+    <ClCompile Include="..\..\..\..\Library\Gui\Volume.c" />
+  </ItemGroup>
+</Project>

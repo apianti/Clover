@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Encoding">
+      <UniqueIdentifier>{00f0091a-4ac4-48a3-8073-6580b422fcb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Locale">
+      <UniqueIdentifier>{7861327e-7d29-4a5d-ba77-d6769e570f95}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Library\Uefi\Boot.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Configuration.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Console.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\DevicePath.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\File.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Log.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Memory.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Print.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Runtime.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Serial.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Status.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\String.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\EntryPoint.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\VirtualMemory.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Image.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Language.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Translation.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\VirtualMachine.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Lock.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Queue.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Encoding.c">
+      <Filter>Encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Latin1.c">
+      <Filter>Encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Utf8.c">
+      <Filter>Encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Utf16.c">
+      <Filter>Encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Utf16Swapped.c">
+      <Filter>Encoding</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Library\Uefi\Locale\Default.c">
+      <Filter>Locale</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Library\Uefi\Locale\Locale.c">
+      <Filter>Locale</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Library\Uefi\VirtualMemory.h" />
+  </ItemGroup>
+</Project>

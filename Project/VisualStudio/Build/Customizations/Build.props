@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <!-- User build options -->
+  <PropertyGroup Label="UserMacros">
+    <EfiProjectName>Clover</EfiProjectName>
+    <EfiDefaultPlatform>x64</EfiDefaultPlatform>
+    <EfiDefaultProjectArch>X64</EfiDefaultProjectArch>
+    <EfiProjectArch Condition="'$(Platform)' == 'ARM64'">AARCH64</EfiProjectArch>
+    <EfiProjectArch Condition="'$(Platform)' == 'ARM'">ARM</EfiProjectArch>
+    <EfiProjectArch Condition="'$(Platform)' == 'Win32'">IA32</EfiProjectArch>
+    <EfiProjectArch Condition="'$(Platform)' == 'x64'">X64</EfiProjectArch>
+    <EfiProjectArch Condition="'$(EfiProjectArch)' == ''">$(EfiDefaultProjectArch)</EfiProjectArch>
+    <EfiProjectShortArch>$(EfiProjectArch)</EfiProjectShortArch>
+    <EfiProjectShortArch Condition="'$(Platform)' == 'ARM64'">AA64</EfiProjectShortArch>
+    <EfiProjectDebug>1</EfiProjectDebug>
+    <EfiMemoryVirtual>1</EfiMemoryVirtual>
+    <EfiMemoryVirtualFirmwareSafe>1</EfiMemoryVirtualFirmwareSafe>
+    <EfiSerialDisable>1</EfiSerialDisable>
+    <EfiProjectSource>$(SolutionDir)</EfiProjectSource>
+    <EfiProjectBuildTools>$(EfiProjectSource)\Project\VisualStudio\Build</EfiProjectBuildTools>
+    <EfiBuildStage>$(SolutionDir)\Build\$(Configuration)_$(EfiProjectArch)</EfiBuildStage>
+    <EfiDefaultLoaderName>Gui.efi</EfiDefaultLoaderName>
+    <EfiDefaultLoader>$(EfiBuildStage)\$(EfiDefaultLoaderName)</EfiDefaultLoader>
+    <EfiProjectOutput>$(EfiProjectSource)\Output</EfiProjectOutput>
+    <EfiOutputStage>$(EfiProjectOutput)\Stage</EfiOutputStage>
+    <EfiProjectStage>$(EfiOutputStage)\EFI\$(EfiProjectName)\$(EfiProjectShortArch)</EfiProjectStage>
+    <EfiProjectIso></EfiProjectIso>
+    <EfiDocumentationStage>$(SolutionDir)\Output\Documentation</EfiDocumentationStage>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <!-- Setup environment source for lightweight CRT -->
+    <CrtPath>$(VCInstallDir)\crt\src</CrtPath>
+    <CrtPath Condition="'$(PlatformToolsetVersion)' != '' And $(PlatformToolsetVersion) > 140">$(VCToolsInstallDir)\crt\src</CrtPath>
+    <CrtArchPath Condition="'$(Platform)' == 'Win32'">$(CrtPath)\intel</CrtArchPath>
+    <CrtArchPath Condition="'$(Platform)|$(PlatformToolset)' == 'Win32|v140'">$(CrtPath)\i386</CrtArchPath>
+    <CrtArchPath Condition="'$(Platform)' == 'Win32' And '$(PlatformToolsetVersion)' != '' And $(PlatformToolsetVersion) > 140">$(CrtPath)\i386</CrtArchPath>
+    <CrtArchPath Condition="'$(Platform)' == 'ARM'">$(CrtPath)\arm</CrtArchPath>
+    <CrtArchPath Condition="'$(Platform)' == 'ARM64'">$(CrtPath)\arm64</CrtArchPath>
+    <CrtArchPath Condition="'$(CrtArchPath)' == ''">$(CrtPath)\amd64</CrtArchPath>
+    <!-- Default configuration -->
+    <MapExports>true</MapExports>
+    <Optimization>Full</Optimization>
+    <OutDir>$(EfiBuildStage)\</OutDir>
+    <CharacterSet>Unicode</CharacterSet>
+    <TargetMachine>$(Target)</TargetMachine>
+    <GenerateManifest>false</GenerateManifest>
+    <IntDir>$(OutDir)\$(ProjectName)\</IntDir>
+    <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+    <OptimizeReferences>false</OptimizeReferences>
+    <FunctionLevelLinking>true</FunctionLevelLinking>
+    <LibraryPath>$(OutDir)\;$(LibraryPath)</LibraryPath>
+    <MapFileName>$(OutDir)\$(TargetName).map</MapFileName>
+    <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <SourcePath>$(SolutionDir)\Include;$(SourcePath)</SourcePath>
+    <WindowsSDKDesktopARMSupport>true</WindowsSDKDesktopARMSupport>
+    <WindowsSDKDesktopARM64Support>true</WindowsSDKDesktopARM64Support>
+    <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+    <NMakeIncludeSearchPath>$(SolutionDir)\Include</NMakeIncludeSearchPath>
+    <TargetExt Condition="'$(ConfigurationType)' == 'DynamicLibrary'">.efi</TargetExt>
+    <RandomizedBaseAddress>false</RandomizedBaseAddress>
+    <RandomizedBaseAddress Condition="'$(Platform)' == 'ARM' Or '$(Platform)' == 'ARM64'">true</RandomizedBaseAddress>
+    <EnableEnhancedInstructionSet Condition="'$(Platform)' == 'Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    <IncludePath>$(SolutionDir)\Include;$(OutDir)\Include;$(SolutionDir)\Library\Uefi;$(SolutionDir)\Library\Uefi\$(EfiProjectArch);$(CrtPath);$(CrtArchPath);$(WindowsSDK80Path)\Include\shared;$(IncludePath)</IncludePath>
+    <AdditionalIncludeDirectories>$(SolutionDir)\Include;$(OutDir)\Include;$(CrtPath);$(CrtArchPath);$(WindowsSDK80Path)\Include\shared;$(IncludePath)</AdditionalIncludeDirectories>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <!-- Compilation options -->
+    <ClCompile>
+      <MapExports>true</MapExports>
+      <Optimization>Full</Optimization>
+      <StringPooling>true</StringPooling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TargetMachine>$(Target)</TargetMachine>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <MapFileName>$(OutDir)\$(TargetName).map</MapFileName>
+      <DisableSpecificWarnings>4820</DisableSpecificWarnings>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <EnableFunctionLevelLinking>true</EnableFunctionLevelLinking>
+      <AdditionalOptions>/Gw %(AdditionalOptions)</AdditionalOptions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>$(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TargetExt Condition="'$(ConfigurationType)' == 'DynamicLibrary'">.efi</TargetExt>
+      <RandomizedBaseAddress Condition="'$(Platform)' == 'ARM' Or '$(Platform)' == 'ARM64'">true</RandomizedBaseAddress>
+      <EnableEnhancedInstructionSet Condition="'$(Platform)' == 'Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <!-- Statically linked options -->
+    <Lib>
+      <MapExports>true</MapExports>
+      <SubSystem>EFI Application</SubSystem>
+      <TargetMachine>$(Target)</TargetMachine>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+      <MapFileName>$(OutDir)\$(TargetName).map</MapFileName>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <DataExecutionPrevention>false</DataExecutionPrevention>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <EnableFunctionLevelLinking>true</EnableFunctionLevelLinking>
+      <AdditionalDependencies>$(NoInherit)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalOptions>/ignore:4006 %(AdditionalOptions)</AdditionalOptions>
+      <TargetExt Condition="'$(ConfigurationType)' == 'DynamicLibrary'">.efi</TargetExt>
+      <RandomizedBaseAddress Condition="'$(Platform)' == 'ARM'">true</RandomizedBaseAddress>
+      <RandomizedBaseAddress Condition="'$(Platform)' == 'x64'">false</RandomizedBaseAddress>
+      <RandomizedBaseAddress Condition="'$(Platform)' == 'ARM64'">true</RandomizedBaseAddress>
+      <RandomizedBaseAddress Condition="'$(Platform)' == 'Win32'">false</RandomizedBaseAddress>
+      <EnableEnhancedInstructionSet Condition="'$(Platform)' == 'Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </Lib>
+    <!-- Dynamically linked options -->
+    <Link>
+      <MapExports>true</MapExports>
+      <EntryPointSymbol></EntryPointSymbol>
+      <SubSystem>EFI Application</SubSystem>
+      <TargetMachine>$(Target)</TargetMachine>
+      <MergeSections>.CRT=.data</MergeSections>
+      <GenerateManifest>false</GenerateManifest>
+      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MapFileName>$(OutDir)\$(TargetName).map</MapFileName>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <DataExecutionPrevention>false</DataExecutionPrevention>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <EnableFunctionLevelLinking>true</EnableFunctionLevelLinking>
+      <AdditionalDependencies>$(NoInherit)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalOptions>/ignore:4006 %(AdditionalOptions)</AdditionalOptions>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <TargetExt Condition="'$(ConfigurationType)' == 'DynamicLibrary'">.efi</TargetExt>
+      <RandomizedBaseAddress Condition="'$(Platform)' == 'ARM'"></RandomizedBaseAddress>
+      <RandomizedBaseAddress Condition="'$(Platform)' == 'X64'">false</RandomizedBaseAddress>
+      <RandomizedBaseAddress Condition="'$(Platform)' == 'ARM64'"></RandomizedBaseAddress>
+      <RandomizedBaseAddress Condition="'$(Platform)' == 'Win32'">false</RandomizedBaseAddress>
+      <EnableEnhancedInstructionSet Condition="'$(Platform)' == 'Win32'">NoExtensions</EnableEnhancedInstructionSet>
+    </Link>
+    <!-- Set the default build log locations to be in the intermediate build directory -->
+    <BuildLog>
+      <Path>$(IntDir)\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+    <!-- Set some MASM options -->
+    <MASM>
+      <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+      <WarningLevel>0</WarningLevel>
+    </MASM>
+  </ItemDefinitionGroup>
+  <!-- Build macros -->
+  <ItemGroup>
+    <BuildMacro Include="EfiProjectName">
+      <Value>$(EfiProjectName)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiProjectArch">
+      <Value>$(EfiProjectArch)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiProjectShortArch">
+      <Value>$(EfiProjectShortArch)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiProjectDebug">
+      <Value>$(EfiProjectDebug)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiMemoryVirtual">
+      <Value>$(EfiMemoryVirtual)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiMemoryVirtualFirmwareSafe">
+      <Value>$(EfiMemoryVirtualFirmwareSafe)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiSerialDisable">
+      <Value>$(EfiSerialDisable)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiProjectSource">
+      <Value>$(EfiProjectSource)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiProjectBuildTools">
+      <Value>$(EfiProjectBuildTools)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiBuildStage">
+      <Value>$(EfiBuildStage)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiDefaultLoaderName">
+      <Value>$(EfiDefaultLoaderName)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiDefaultLoader">
+      <Value>$(EfiDefaultLoader)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiProjectOutput">
+      <Value>$(EfiProjectOutput)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiOutputStage">
+      <Value>$(EfiOutputStage)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiProjectStage">
+      <Value>$(EfiProjectStage)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiProjectIso">
+      <Value>$(EfiProjectIso)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiDocumentationStage">
+      <Value>$(EfiDocumentationStage)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EfiNASMLocation">
+      <Value>$(EfiNASMLocation)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

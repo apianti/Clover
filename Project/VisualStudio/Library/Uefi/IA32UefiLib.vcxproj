@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Uefi|Win32">
+      <Configuration>Uefi</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5BA03D00-23C0-4D8D-9892-26A4ECED8067}</ProjectGuid>
+    <RootNamespace>IA32UefiLib</RootNamespace>
+    <ProjectName>IA32UefiLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="..\..\Build\Customizations\Platform.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <Import Project="..\..\Build\Customizations\nasm.props" />
+  <Import Project="..\..\Build\Customizations\Build.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <Import Project="..\..\Build\Customizations\nasm.targets" />
+  <ItemGroup>
+    <MASM Include="..\..\..\..\Library\Uefi\IA32\ftol.asm" />
+    <MASM Include="$(CrtArchPath)\lldiv.asm" />
+    <MASM Include="$(CrtArchPath)\lldvrm.asm" />
+    <MASM Include="$(CrtArchPath)\llmul.asm" />
+    <MASM Include="$(CrtArchPath)\llrem.asm" />
+    <MASM Include="$(CrtArchPath)\llshl.asm" />
+    <MASM Include="$(CrtArchPath)\ulldiv.asm" />
+    <MASM Include="$(CrtArchPath)\ulldvrm.asm" />
+    <MASM Include="$(CrtArchPath)\ullrem.asm" />
+    <MASM Include="$(CrtArchPath)\ullshr.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="..\..\..\..\Library\Uefi\IA32\cmpxchg.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\IA32\cpuid.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\IA32\msr.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\IA32\pause.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\IA32\store.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\IA32\swap.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\IA32\tables.nasm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Library\Uefi\IA32\mm.inc" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\vcruntime.inc" />
+  </ItemGroup>
+</Project>

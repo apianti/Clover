@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Uefi|ARM64">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6B821670-1BB0-402F-A444-8360D5FCF6BF}</ProjectGuid>
+    <RootNamespace>AARCH64UefiLib</RootNamespace>
+    <ProjectName>AARCH64UefiLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="..\..\Build\Customizations\Platform.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\Build\Customizations\armasm.props" />
+  <Import Project="..\..\Build\Customizations\Build.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\Build\Customizations\armasm.targets" />
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Library\Uefi\AARCH64\helper.c" />
+    <ARMASM Include="..\..\..\..\Library\Uefi\AARCH64\intrinsics.asm" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <Lib>
+      <ForceSymbolReferences>EfiCpuPause;EfiCompareAndExchange32;EfiCompareAndExchange64;EfiByteSwap16;EfiByteSwap32;EfiByteSwap64;__helper_divide_by_0</ForceSymbolReferences>
+    </Lib>
+  </ItemDefinitionGroup>
+</Project>

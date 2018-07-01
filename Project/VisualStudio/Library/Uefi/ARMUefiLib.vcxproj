@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Uefi|ARM">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{460902CD-D082-4B8F-BA87-F6DB1B454DBD}</ProjectGuid>
+    <RootNamespace>ARMUefiLib</RootNamespace>
+    <ProjectName>ARMUefiLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="..\..\Build\Customizations\Platform.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\Build\Customizations\armasm.props" />
+  <Import Project="..\..\Build\Customizations\Build.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\Build\Customizations\armasm.targets" />
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Library\Uefi\ARM\helper.c" />
+    <ARMASM Include="..\..\..\..\Library\Uefi\ARM\intrinsics.asm" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <Lib>
+      <ForceSymbolReferences>EfiCpuPause;EfiCompareAndExchange32;EfiCompareAndExchange64;EfiByteSwap16;EfiByteSwap32;EfiByteSwap64;__helper_divide_by_0</ForceSymbolReferences>
+    </Lib>
+  </ItemDefinitionGroup>
+</Project>

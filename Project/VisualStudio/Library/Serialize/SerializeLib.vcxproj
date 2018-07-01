@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Uefi|ARM">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|ARM64">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|Win32">
+      <Configuration>Uefi</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|x64">
+      <Configuration>Uefi</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{46C3491E-3913-46AA-A353-FF6F381B2283}</ProjectGuid>
+    <RootNamespace>SerializeLib</RootNamespace>
+    <ProjectName>SerializeLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="..\..\Build\Customizations\Platform.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\Build\Customizations\Build.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Library\Serialize\Base64.c" />
+    <ClCompile Include="..\..\..\..\Library\Serialize\Parser.c" />
+    <ClCompile Include="..\..\..\..\Library\Serialize\Plist.c" />
+    <ClCompile Include="..\..\..\..\Library\Serialize\Serialize.c" />
+    <ClCompile Include="..\..\..\..\Library\Serialize\Svg.c" />
+    <ClCompile Include="..\..\..\..\Library\Serialize\Xml.c" />
+    <ClCompile Include="..\..\..\..\Library\Serialize\XmlStates.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Library\Serialize\SvgAttributes.h" />
+    <ClInclude Include="..\..\..\..\Library\Serialize\SvgElements.h" />
+    <ClInclude Include="..\..\..\..\Library\Serialize\XmlStates.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\..\Library\Serialize\Type\plist.dtd">
+      <FileType>Document</FileType>
+      <Command>call "$(EfiProjectBuildTools)\Resource.bat" "%(FullPath)" "$(SolutionDir)\Library\Serialize" "SerializeLib" "Serialize"</Command>
+      <LinkObjects>true</LinkObjects>
+      <Outputs>$(IntDir)\Type\%(Filename)%(Extension).obj</Outputs>
+      <SubType>Designer</SubType>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\Library\Serialize\Type\svg-1.1.dtd">
+      <FileType>Document</FileType>
+      <Command>call "$(EfiProjectBuildTools)\Resource.bat" "%(FullPath)" "$(SolutionDir)\Library\Serialize" "SerializeLib" "Serialize"</Command>
+      <LinkObjects>true</LinkObjects>
+      <Outputs>$(IntDir)\Type\%(Filename)%(Extension).obj</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

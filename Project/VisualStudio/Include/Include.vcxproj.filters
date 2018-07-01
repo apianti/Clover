@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Uefi">
+      <UniqueIdentifier>{e10b52df-178b-4ba0-825e-fa748ae4b5ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Uefi\Protocol">
+      <UniqueIdentifier>{de4c54f5-f42d-4a5b-8ef2-64a1d80b3c19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui">
+      <UniqueIdentifier>{b7d0b36e-7b26-45aa-bc56-14cac282e9c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Serialize">
+      <UniqueIdentifier>{cee2d660-3f9e-467a-b9fb-1b05f5e5d8ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cpu">
+      <UniqueIdentifier>{819484bb-3126-4d43-9c13-f9b88e70db15}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Include\GUI\Geometry.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GUI\Graphics.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GUI\Input.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GUI\List.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GUI\Object.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GUI\ObjectList.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GUI\Screen.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GUI\Task.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GUI\Version.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\GUI\Volume.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Base.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Boot.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Print.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Runtime.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Status.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\String.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\System.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AbsolutePointer.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AcpiTable.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AdapterInformation.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Arp.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AtaPassThru.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\AuthenticationInfo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Bis.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BlockIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BlockIo2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BlockIoCrypto.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothAttribute.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothConfig.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothHostController.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BluetoothLeConfig.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\BusSpecificDriverOverride.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ComponentName.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ComponentName2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Debugport.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DebugSupport.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Decompress.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DevicePath.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DevicePathFromText.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DevicePathToText.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DevicePathUtilities.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Dhcp4.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Dhcp6.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DiskIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DiskIo2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Dns4.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Dns6.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverBinding.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverDiagnostics.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverDiagnostics2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverFamilyOverride.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverHealth.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\DriverSupportedEfiVersion.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Eap.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EapConfiguration.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EapManagement.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EapManagement2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ebc.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EdidActive.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EdidDiscovered.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EdidOverride.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\EraseBlock.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ExtScsiPassThru.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\File.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\FirmwareManagement.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\FormBrowser2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ftp4.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\GraphicsOutput.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Hash.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Hash2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiConfigAccess.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiConfigKeyword.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiConfigRouting.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiDatabase.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiFont.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiFontEx.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiFontGlyphGenerator.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiImage.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiImageDecoder.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiImageEx.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiPopup.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HiiString.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Http.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HttpBootCallback.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\HttpUtilities.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip4.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip4Config.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip4Config2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip6.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Ip6Config.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\IpSec.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\IpSec2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\IpSecConfig.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Kms.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\LoadedImage.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\LoadFile.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\LoadFile2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ManagedNetwork.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Mtftp4.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Mtftp6.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\NvdimmLabel.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\NvmExpressPassThru.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PciIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PciRootBridgeIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Pkcs7Verify.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PlatformDriverOverride.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PlatformToDriverConfig.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PxeBaseCode.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\PxeBaseCodeCallback.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\RamDisk.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\RegularExpression.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ResetNotification.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Rest.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Rng.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ScsiIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SdMmcPassThru.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SerialIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\ServiceBinding.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleFileSystem.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleNetwork.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimplePointer.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleTextInput.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleTextInputEx.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SimpleTextOutput.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SmartCardEdge.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\SmartCardReader.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\StorageSecurityCommand.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Supplicant.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\TapeIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Tcp4.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Tcp6.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Timestamp.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Tls.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\TlsConfig.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Udp4.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Udp6.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UfsDeviceConfig.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UgaDraw.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UnicodeCollation.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Usb2HostController.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UsbFunctionIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UsbHostController.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UsbIo.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UserCredential.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UserCredential2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\UserManager.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\VlanConfig.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\WiFi.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\WiFi2.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi.h" />
+    <ClInclude Include="..\..\..\Include\Uefi\Defaults.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Configuration.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Encoding.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Log.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Locale.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Language.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\Translation.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Serialize\Parser.h">
+      <Filter>Serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Serialize\Plist.h">
+      <Filter>Serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Serialize\Svg.h">
+      <Filter>Serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Serialize\Xml.h">
+      <Filter>Serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Serialize\Base64.h">
+      <Filter>Serialize</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Protocol\MpService.h">
+      <Filter>Uefi\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Gui\Client.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Cpu\Cpu.h">
+      <Filter>Cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Intrinsics.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Lock.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Uefi\Queue.h">
+      <Filter>Uefi</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Installer\Installer.c" />
+    <ClCompile Include="..\..\..\Installer\Windows\Platform.c">
+      <Filter>Windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{1948ce64-d5e1-48a8-9561-26e34189279c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="macOS">
+      <UniqueIdentifier>{b432cdf3-4fd7-40d5-8e2e-af7f3b07d3db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Linux">
+      <UniqueIdentifier>{191d7db9-e0f0-4559-b771-d874062fe4b9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Installer\Installer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Installer\macOS\Platform.c">
+      <Filter>macOS</Filter>
+    </None>
+    <None Include="..\..\..\Installer\Linux\Platform.c">
+      <Filter>Linux</Filter>
+    </None>
+  </ItemGroup>
+</Project>

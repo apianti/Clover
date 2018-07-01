@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Uefi|x64">
+      <Configuration>Uefi</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F1ED1BEA-993B-48C8-B04D-20B6D101DEBA}</ProjectGuid>
+    <RootNamespace>X64UefiLib</RootNamespace>
+    <ProjectName>X64UefiLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="..\..\Build\Customizations\Platform.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\Build\Customizations\nasm.props" />
+  <Import Project="..\..\Build\Customizations\Build.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\Build\Customizations\nasm.targets" />
+  <ItemGroup>
+    <NASM Include="..\..\..\..\Library\Uefi\X64\cmpxchg.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\X64\cpuid.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\X64\msr.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\X64\pause.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\X64\store.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\X64\swap.nasm" />
+    <NASM Include="..\..\..\..\Library\Uefi\X64\tables.nasm" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <MASM Include="$(CrtArchPath)\lldiv.asm" />
+    <MASM Include="$(CrtArchPath)\lldvrm.asm" />
+    <MASM Include="$(CrtArchPath)\llmul.asm" />
+    <MASM Include="$(CrtArchPath)\llrem.asm" />
+    <MASM Include="$(CrtArchPath)\llshl.asm" />
+    <MASM Include="$(CrtArchPath)\ulldiv.asm" />
+    <MASM Include="$(CrtArchPath)\ulldvrm.asm" />
+    <MASM Include="$(CrtArchPath)\ullrem.asm" />
+    <MASM Include="$(CrtArchPath)\ullshr.asm" />
+    <MASM Include="..\..\..\..\Library\Uefi\IA32\ftol.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Library\Uefi\IA32\vcruntime.inc" />
+    <None Include="..\..\..\Library\Uefi\IA32\mm.inc" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\cmpxchg.nasm" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\cpuid.nasm" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\mm.inc" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\msr.nasm" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\pause.nasm" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\store.nasm" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\swap.nasm" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\tables.nasm" />
+    <None Include="..\..\..\..\Library\Uefi\IA32\vcruntime.inc" />
+  </ItemGroup>
+</Project>

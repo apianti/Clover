@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Uefi|ARM">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|ARM64">
+      <Configuration>Uefi</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|Win32">
+      <Configuration>Uefi</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Uefi|x64">
+      <Configuration>Uefi</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2DE27EDF-84E2-4992-B4D5-9BA4CEF5FA43}</ProjectGuid>
+    <RootNamespace>UefiLib</RootNamespace>
+    <ProjectName>UefiLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="..\..\Build\Customizations\Platform.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\..\Build\Customizations\Build.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Library\Uefi\Boot.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Encoding.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Latin1.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Utf16.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Utf16Swapped.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Encoding\Utf8.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\EntryPoint.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Configuration.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Console.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\DevicePath.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\File.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Image.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Language.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Locale\Default.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Locale\Locale.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Lock.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Log.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Memory.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Print.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Queue.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Runtime.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Serial.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Status.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\String.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\Translation.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\VirtualMachine.c" />
+    <ClCompile Include="..\..\..\..\Library\Uefi\VirtualMemory.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Library\Uefi\VirtualMemory.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <Lib>
+      <AdditionalDependencies>$(EfiProjectArch)UefiLib.lib;$(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+</Project>
